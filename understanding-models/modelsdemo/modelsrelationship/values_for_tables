@@ -1,0 +1,38 @@
+One to one
+
+user1 = User(name='Batman')
+user2 = User(name='Ironman')
+user3 = User(name='Wonderwoman')
+
+profile1 = Profile(user=user1,language='english',email='bruce@wayneindustries.com')
+profile2 = Profile(user=user2,language='english',email='tony@starkindustries.com')
+profile3 = Profile(user=user3,language='english',email='rebacca@wondergirl.com')
+
+profile1.user.name
+
+----------------------------------------------------------------------------------------
+Many to one
+author1 = Author(name='firstauthor')
+author2 = Author(name='secondauthor')
+author3 = Author(name='thirdauthor')
+
+book1 = Book(author=author1,title='first author first book')
+book2 = Book(author=author1,title='first author second book')
+book3 = Book(author=author1,title='first author third book')
+
+----------------------------------------------------------------------------------------
+
+Many to Many:
+perks1 = EmployeePerks(name='cab')
+perks2 = EmployeePerks(name='movies')
+perks3 = EmployeePerks(name='outings')
+perks4 = EmployeePerks(name='foodmeals')
+perks5 = EmployeePerks(name='sudokeso')
+
+
+employee1 = Employee(first_name='Tony',last_name='Stark')
+employee1.compensations.add(perks1)
+employee1.compensations.add(perks2)
+employee1.save()
+
+employee1.compensations.add(perks4,perks5)
